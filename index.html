@@ -9,17 +9,23 @@
 <body>
     <h2>Formulario VESEP DGCEIT</h2>
 
-<form>
-  <label for="numeroParcela">Número de Parcela:</label><br>
-  <input type="number" id="numeroParcela" name="parcel_number"><br><br>
-  
-  <label for="owner_name">Nombre del Propietario:</label><br>
-  <input type="text" id="owner_name" name="owner_name"><br><br>
-  
-  <label for="date">Fecha:</label><br>
-  <input type="date" id="date" name="date"><br><br>
-  
-  <input type="submit" value="Enviar">
-</form>
+    <form>
+      <div style="position:relative;">
+          <input type="text" id="numeroParcela" name="numeroParcela">
+          <label for="parcel_number">Nomenclatura</label>
+      </div>
+    
+      <div style="position:relative;">
+          <input type="text" id="nombrePropietario" name="nombrePropietario">
+          <label for="owner_name">Nombre del Propietario</label>
+      </div>
+    
+      <div style="position:relative;">
+          <input type="date" id="fecha" name="fecha">
+          <label for="date"></label>
+      </div>
+    
+      <input type="submit" id="botonEnviar" value="Enviar">
+    </form>
 </body>
 </html>
