@@ -1,3 +1,17 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const btnCancelar = document.getElementById('cancelar-btn');
+    
+    btnCancelar.addEventListener('click', function() {
+        // Llama a la función borrar para cada formulario
+        borrar('Anterior');
+        borrar('Actual');
+        borrar('Antecedente');
+        borrar('Persona');
+        borrar('Tomo');
+        borrar('Matricula');
+    });
+});
+
 /*Estilo de los inputs de transicion*/
 
 // Espera a que todo el contenido del documento HTML se cargue antes de ejecutar el código.
