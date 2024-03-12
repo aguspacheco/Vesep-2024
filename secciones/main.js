@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
 /*Estilo de los inputs de transicion*/
 
 // Espera a que todo el contenido del documento HTML se cargue antes de ejecutar el código.
@@ -37,4 +38,37 @@ document.addEventListener('DOMContentLoaded', function() {
             input.previousElementSibling.classList.add('label-active');
         }
     });
+});
+
+
+const camposNumero = document.querySelectorAll('input[type="number"]');
+
+for (let i = 0; i < camposNumero.length; i++) {
+    camposNumero[i].addEventListener('input', function() {
+        const valor = parseFloat(this.value);
+
+        if (valor < 0 || isNaN(valor)) {
+            alert("Solo se permiten ingresar números postivos")
+            this.value = '';
+        }
+   });   
+}
+
+const cuilInput = document.getElementById('cuit');
+
+cuilInput.addEventListener('input', function() {
+    // Obtener el valor actual del input
+    let valor = this.value.replace(/\D/g, ''); // Eliminar caracteres no numéricos
+
+    // Aplicar el formato con guiones
+    if (valor.length > 2) {
+        valor = valor.substring(0, 2) + '-' + valor.substring(2);
+    }
+
+    if (valor.length > 11) {
+        valor = valor.substring(0, 11);
+    }
+
+    // Asignar el valor formateado al input
+    this.value = valor;
 });
